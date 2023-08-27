@@ -1,29 +1,40 @@
 #include <GL/glut.h>
 #include <stdio.h>
 
-const unsigned int W = 256;
-const unsigned int H = 256;
+const unsigned int W = 256*3;
+const unsigned int H = 256*3;
 
+// Pico-8 Palette 8)
+const unsigned int colormap[16] = {
+    0x000000, //black
+    0x1D2B53, //dark-blue
+    0x7E2553, //dark-purple
+    0x008751, //dark-green
+    0xAB5236, //brown
+    0x5F574F, //dark-grey
+    0xC2C3C7, //light-grey
+    0xFFF1E8, //white
+    0xFF004D, //red
+    0xFFA300, //orange
+    0xFFEC27, //yellow
+    0x00E436, //green
+    0x29ADFF, //blue
+    0x83769C, //lavender
+    0xFF77A8, //pink
+    0xFFCCAA  //light-peach
+};
 
-/*
-I'm gonna use the colors from the pico-8 because I think they're really pleasant.
-0 		#000000 	0, 0, 0 	black
-1 		#1D2B53 	29, 43, 83 	dark-blue
-2 		#7E2553 	126, 37, 83 	dark-purple
-3 		#008751 	0, 135, 81 	dark-green
-4 		#AB5236 	171, 82, 54 	brown
-5 		#5F574F 	95, 87, 79 	dark-grey
-6 		#C2C3C7 	194, 195, 199 	light-grey
-7 		#FFF1E8 	255, 241, 232 	white
-8 		#FF004D 	255, 0, 77 	red
-9 		#FFA300 	255, 163, 0 	orange
-10 		#FFEC27 	255, 236, 39 	yellow
-11 		#00E436 	0, 228, 54 	green
-12 		#29ADFF 	41, 173, 255 	blue
-13 		#83769C 	131, 118, 156 	lavender
-14 		#FF77A8 	255, 119, 168 	pink
-15 		#FFCCAA 	255, 204, 170 	light-peach 
-*/
+GLubyte getRed(unsigned int value) {
+    return (value >> 16) & 0xFF;
+}
+
+GLubyte getGreen(unsigned int value) {
+    return (value >> 8) & 0xFF;
+}
+
+GLubyte getBlue(unsigned int value) {
+    return value & 0xFF;
+}
 
 void display()
 {
@@ -37,9 +48,9 @@ void display()
     {
         for( size_t x = 0; x < W; ++x )
         {
-            data[y][x][0] = a;//( rand() % 256 );
-            data[y][x][1] = //( rand() % 256 );
-            data[y][x][2] = 0;//( rand() % 256 );
+            data[y][x][0] = getRed(colormap[11]);
+            data[y][x][1] = getGreen(colormap[11]);
+            data[y][x][2] = getBlue(colormap[11]);
         }
     }
 
