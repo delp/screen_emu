@@ -1,6 +1,6 @@
 default:
-	gcc random.pixels.c -lglut -lGLU -lGL -o random.pixels
+	gcc screen.c -lglut -lGLU -lGL -o screen
 
 run:
-	gcc random.pixels.c -lglut -lGLU -lGL -o random.pixels
-	./random.pixels
+	gcc screen.c -lglut -lGLU -lGL -o screen
+	./screen
