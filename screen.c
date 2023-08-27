@@ -10,18 +10,19 @@ void display()
     glClear( GL_COLOR_BUFFER_BIT );
 
     printf("boop\n");
-    unsigned int data[H][W][3];
+    GLubyte data[H][W][3];
+    GLubyte a = 0xFF;
     for( size_t y = 0; y < H; ++y )
     {
         for( size_t x = 0; x < W; ++x )
         {
-            data[y][x][0] = ( rand() % 256 ) * 256 * 256 * 256;
-            data[y][x][1] = ( rand() % 256 ) * 256 * 256 * 256;
-            data[y][x][2] = ( rand() % 256 ) * 256 * 256 * 256;
+            data[y][x][0] = a;//( rand() % 256 );
+            data[y][x][1] = //( rand() % 256 );
+            data[y][x][2] = 0;//( rand() % 256 );
         }
     }
 
-    glDrawPixels( W, H, GL_RGB, GL_UNSIGNED_INT, data );
+    glDrawPixels( W, H, GL_RGB, GL_UNSIGNED_BYTE, data );
 
     glutSwapBuffers();
 }
