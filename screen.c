@@ -1,8 +1,8 @@
 #include <GL/glut.h>
 #include <stdio.h>
 
-const unsigned int W = 256*3;
-const unsigned int H = 256*3;
+const unsigned int W = 256;
+const unsigned int H = 256;
 
 // Pico-8 Palette 8)
 const unsigned int colormap[16] = {
