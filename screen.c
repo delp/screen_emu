@@ -41,7 +41,6 @@ void display()
     glClearColor( 0, 0, 0, 1 );
     glClear( GL_COLOR_BUFFER_BIT );
 
-    printf("boop\n");
     GLubyte data[H][W][3];
     GLubyte a = 0xFF;
     for( size_t y = 0; y < H; ++y )
@@ -66,6 +65,7 @@ void timer(int value) {
 
 int main( int argc, char **argv )
 {
+    printf("hell ya dude\n");
     glutInit( &argc, argv );
     glutInitDisplayMode( GLUT_RGBA | GLUT_DOUBLE );
     glutInitWindowSize( W, H );
