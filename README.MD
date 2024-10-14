@@ -13,6 +13,6 @@ If you wanna setup the debugger and the vscode shit do this
 sudo apt-get install build-essential gdb
 ```
 
-Ok there's some tedious bullshit we had to do, make sure you check out whats in .vscode/tasks.json and .vscode/launch.json.
+I did some tedious bullshit with the JSON stuff, make sure you take a look at whats in .vscode/tasks.json and .vscode/launch.json.
 It should work now.
 
